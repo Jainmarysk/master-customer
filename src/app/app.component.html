@@ -38,7 +38,7 @@ placeholder="Enter your Name"  name="name" [(ngModel)]= "customerModel.name">
 ​
 <div class = "form-group">
 <label>Mobile Number</label><span class="required">*</span> 
-<input type = "tel"  #phone="ngModel" pattern="^\d{10}$" required 
+<input type = "tel"  #mobileNo="ngModel" pattern="^\d{10}$" required 
 [class.is-invalid]= "mobileNo.invalid && mobileNo.touched" required class="form-control" type="string" 
 placeholder="Enter your MobileNumber" name="mobileNo" [(ngModel)]="customerModel.phone">
 <!-- <small class="text-danger" [class.d-none]= "mobileNo.valid || mobileNo.untouched"></small>    -->
