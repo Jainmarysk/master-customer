@@ -64,19 +64,12 @@ name="email" [(ngModel)]="customerModel.email">
 ​
   
   
-  <!-- <div class = "form-group">
-    <label>VehicleId</label>
-    <select  required #vehicleId="ngModel" [class.is-invalid]="vehicleId.invalid && vehicleId.touched" class ="custom-select" name="vehicleId" type="number" [(ngModel)]="vehicleModel.vehicleId">
-        <option value=""selected >select</option>
-        <option *ngFor="let user of mydata">{{ user.vehicleId }}</option>option>
-   </select>   
-   <small class="text danger"[class.d-none]="vehicleId.valid || vehicleId.untouched" >Please select the option</small>
-  </div> -->
+  
   <button [disabled]="customerForm.form.invalid" type="submit" class="btn btn-success">
     {{editMode ? 'update' : 'submit'}}
   </button>
                          
-  <!-- <input [disabled]="vehicleForm.form.invalid"  type="submit" value="Submit" id="form"> -->
+ 
 ​
   </form>
   </div>

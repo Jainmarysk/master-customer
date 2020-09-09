@@ -47,7 +47,7 @@ export class AppComponent {
   }
   
   data = [];
-  displayedColumns: string[] = ['id', 'name', 'phone', 'email','actions'];
+  displayedColumns: string[] = ['id', 'name', 'mobileNo', 'email','actions'];
   dataSource = new MatTableDataSource<Customerdetails>(this.data);
   activeindex=-1;
   user;
@@ -135,7 +135,7 @@ update()
     return this.http.patch<any>('http://localhost:3000/customers/'+this.activeindex,{
       id:this.activeindex,
       name: this.customerModel.name,
-      phone: this.customerModel.mobileNo,
+      mobileNo: this.customerModel.mobileNo,
       email: this.customerModel.email,
       
     },request)
