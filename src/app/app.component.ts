@@ -47,7 +47,7 @@ export class AppComponent {
   }
   
   data = [];
-  displayedColumns: string[] = ['id', 'name', 'mobileNo', 'email','actions'];
+  displayedColumns: string[] = ['id', 'name', 'mobileNo', 'email', 'isActive','actions'];
   dataSource = new MatTableDataSource<Customerdetails>(this.data);
   activeindex=-1;
   user;

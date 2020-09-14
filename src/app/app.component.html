@@ -91,9 +91,9 @@
     <td mat-cell *matCellDef="let data"> {{data.email}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="isActive">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>isActive </th>
-    </ng-container>
+    <ng-container matColumnDef="isActive">      
+      <th mat-header-cell *matHeaderCellDef> isActive </th>     
+       <td mat-cell *matCellDef="let data"> {{data.isActive}} </td>    </ng-container>
 ​
        
     <ng-container matColumnDef="actions">
