@@ -145,15 +145,17 @@ get()
       this.get();
     })
   }
-  edit(obj) {
-   this.editMode=true;
-   console.log(obj);
-   this.customerForm='Update';
-   this.customerModel.name=obj.name,
-   this.customerModel.mobileNo=obj.mobileNo,
-   this.customerModel.email=obj.email,
-  this.activeindex=obj.id;
-}
+  edit(obj,isActive:boolean) {
+    if(isActive)
+    {
+    this.editMode=true;
+    console.log(obj);
+    this.customerForm='Update';
+    this.customerModel.name=obj.name,
+    this.customerModel.mobileNo=obj.mobileNo,
+    this.customerModel.email=obj.email,
+    this.activeindex=obj.id;
+  }}
 ​
    onSearchClear(){
     this.searchKey="";
