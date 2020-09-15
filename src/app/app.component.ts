@@ -7,23 +7,6 @@ import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import {MatDialog, MatDialogConfig, MAT_DIALOG_DATA} from '@angular/material/dialog';
 ​
-​
-export class Customerdetails {
-  constructor(
-  
-   public name: string,
-   public mobileNo: string,
-   public email: string,   
-  ){}
-}
-​
-export class customerModel {
-​
-  Name: string;
-  mobileNo: string;
-  Email: string;
-}
-
 const header = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
@@ -34,7 +17,26 @@ const header = {
 const request = {                                                                                                                                                                                 
   headers: new HttpHeaders(header), 
 };
+
+export class Customerdetails {
+  constructor(
+   public name: string,
+   public mobileNo: string,
+   public email?: string,   
+  ){}
+}
 ​
+export class customerModel {
+​
+  Name: string;
+  mobileNo: string;
+  email?: string;
+}
+​
+export class data {
+  isactive:boolean;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -43,7 +45,7 @@ const request = {
 export class AppComponent {
   customerForm: any;
   title(title: any) {
-    throw new Error("Method not implemented.");
+  throw new Error("Method not implemented.");
   }
   
   data = [];
@@ -53,12 +55,12 @@ export class AppComponent {
   user;
   @ViewChild(MatSort ,{static:true}) sort: MatSort;
   @ViewChild(MatPaginator ,{static:true}) paginator: MatPaginator;
-    searchKey:string
+  searchKey:string
 ​
 constructor(private http:HttpClient) {}
 isCreated:boolean=false;
 isExist:boolean=false;
-customerModel = new Customerdetails('', '', '');
+customerModel = new Customerdetails('', '');
 editMode: boolean=false;
 ​
 ngOnInit(): void {
@@ -136,13 +138,13 @@ get()
       id:this.activeindex,
       name: this.customerModel.name,
       mobileNo: this.customerModel.mobileNo,
-      email: this.customerModel.email,
-      
+      email: this.customerModel.email,  
     },request)
     .subscribe((res: any[])=>{
       this.data=res
       this.editMode=false;
       this.get();
+      this.customerForm='submit';
     })
   }
   edit(obj,isActive:boolean) {
